@@ -1,0 +1,14 @@
+
+<div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+    <img src={{book.imgUrl}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> {{book.name}}  </h5>
+      <p class="card-text">By {{book.author}}</p>
+      <p class="card-text "><small class="text-muted">price :  {{book.amount | currency :"INR"}}</small></p>
+      <div>   
+        <button *ngIf="!isItemInCart" class="btn btn-warning justify-center" (click)="addToCart(book)">Add To Cart</button>
+        <button *ngIf="isItemInCart" class="btn btn-danger justify-center" (click)="removeItemFromCart(book)">Remove From Cart</button>
+        </div>
+    </div>
+  </div>

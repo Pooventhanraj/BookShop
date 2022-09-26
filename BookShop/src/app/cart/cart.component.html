@@ -1,0 +1,13 @@
+<h2>Your Cart Details</h2>
+
+<div *ngIf="getCartDetails().length>0">
+    <div *ngFor="let item of getCartDetails()" >
+         {{item.name}}
+         
+    </div>
+    
+</div>
+<div *ngIf="getCartDetails().length<=0">
+    No items in your cart!
+</div>
+

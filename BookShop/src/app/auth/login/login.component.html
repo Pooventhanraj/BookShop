@@ -1,0 +1,28 @@
+<div class="d-flex align-items-center justify-content-center vh-100 bg-dark text-light">
+
+    <form (ngSubmit)="submit()" class="justify-content-center vh-100" #myForm="ngForm">
+        <h1>LOGIN</h1>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" 
+                placeholder="Enter email" [(ngModel)]="form.email" name="email"
+                #email="ngModel" required>  
+            <!-- <p class="text-light">{{form.email}}</p>             -->
+        </div>
+       <div [hidden]="email.valid">
+            <span><p class="text-danger">Please enter valid email</p></span>
+       </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" 
+            [(ngModel)]="form.password" name="password" #password="ngModel" required>
+            <!-- <p class="text-light">{{form.password}}</p>     -->
+            <div [hidden]="password.valid">
+                <span><p class="text-danger">Please enter valid password</p></span>
+           </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success" [disabled]="myForm.form.invalid">Submit</button>
+        </div>
+    </form>
+</div>

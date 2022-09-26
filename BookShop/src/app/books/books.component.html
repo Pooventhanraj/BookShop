@@ -1,0 +1,31 @@
+<h4>Self Help Book List</h4>
+
+<div>
+    <button (click)="ShowBookDetails()">{{buttonName}}</button>
+</div>
+
+
+<!-- two way binding -->
+<!-- <p>Enter Book Details</p> <input type="text" [(ngModel)]="bookName">
+{{bookName}} -->
+
+
+  <!-- structural binding -->
+
+<div *ngIf="isDisplay">
+    <div class="card-group ">
+    <div *ngFor="let book of books; let i=index" >
+      <div>
+        <!-- child to parent step:3 -->
+        <!-- <app-book  (booksToAdded)=addToCart($event)    [book]="book" ></app-book> -->
+        <app-book [book]="book" ></app-book>
+      </div>
+    </div> 
+</div>
+ </div>
+
+
+
+  
+ 
+
